@@ -112,4 +112,13 @@ class TreeTest {
 		assertNull(tree.find(6));
 	}
 
+	@Test
+	public void printTest() {
+		Tree tree = new Tree(4);
+		tree.add(2); tree.add(1); tree.add(3);
+		tree.add(6); tree.add(5); tree.add(7);
+
+		assertEquals("1 2 3 4 5 6 7", tree.print());
+	}
+
 }

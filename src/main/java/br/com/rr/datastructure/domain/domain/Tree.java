@@ -119,4 +119,38 @@ public class Tree {
 
         return node;
     }
+
+    public String print() {
+        return this.print(this.root).trim();
+    }
+
+    public String printPostOrder() {
+        return this.printPostOrder(this.root).trim();
+    }
+
+    private String print(Node root) {
+        if(root == null) {
+            return "";
+        }
+
+        String tree = print(root.getLeft());
+        tree += root.getValue() + " ";
+        tree += print(root.getRight());
+
+        return tree;
+    }
+
+    private String printPostOrder(Node root) {
+        if(root == null) {
+            return "";
+        }
+
+        String tree = print(root.getLeft());
+        tree += print(root.getRight());
+        tree += root.getValue() + " ";
+
+        return tree;
+    }
+
+
 }
