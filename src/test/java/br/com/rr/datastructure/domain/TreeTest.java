@@ -106,10 +106,14 @@ class TreeTest {
 		tree.add(2); tree.add(1); tree.add(3);
 		tree.add(6); tree.add(5); tree.add(7);
 
+		assertEquals("1 3 2 5 7 6 4", tree.printPostOrder());
+
 		tree.remove(6);
 		assertEquals(4, tree.getRoot().getValue());
 		assertEquals(7, tree.getRoot().getRight().getValue());
 		assertNull(tree.find(6));
+
+		assertEquals("1 3 2 5 7 4", tree.printPostOrder());
 	}
 
 	@Test

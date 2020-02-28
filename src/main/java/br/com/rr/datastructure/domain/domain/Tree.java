@@ -145,8 +145,8 @@ public class Tree {
             return "";
         }
 
-        String tree = print(root.getLeft());
-        tree += print(root.getRight());
+        String tree = printPostOrder(root.getLeft());
+        tree += printPostOrder(root.getRight());
         tree += root.getValue() + " ";
 
         return tree;
